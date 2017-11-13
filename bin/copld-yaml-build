@@ -1,14 +1,22 @@
 #! /usr/bin/env node
 var yaml = require('js-yaml');
 var Ajv = require('ajv');
-var ajv = new Ajv();
 var copldots = require('copldots');
-var copldSchema = require('copld-schema/draft-04/schema.json');
-var validate = ajv.compile(copldSchema);
 var fs = require('fs');
-var sourceDoc = yaml.safeLoad(fs.readFileSync(process.argv[2], 'UTF-8'));
-var valid = validate(sourceDoc);
+
 var pretty = true;
+var ajv = new Ajv();
+var sourceDoc = yaml.safeLoad(fs.readFileSync(process.argv[2], 'UTF-8'));
+var validate;
+
+if (/\/draft-04\//.test(sourceDoc.$schema)) {
+  ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'));
+  validate = ajv.compile(require('copld-schema/draft-04/schema.json'));
+} else {
+  validate = ajv.compile(require('copld-schema/draft-06/schema.json'));
+}
+
+var valid = validate(sourceDoc);
 if (!valid) {
   console.error(validate.errors);
   process.exit(1);
