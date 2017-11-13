@@ -1,0 +1,29 @@
+{
+  "name": "copld-yaml-tools",
+  "version": "0.1.0",
+  "description": "Simple scripts for dealing with .copld.yaml files",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opws/copld-yaml-tools.git"
+  },
+  "keywords": [
+    "json-schema",
+    "copld",
+    "yaml"
+  ],
+  "author": "Stuart P. Bentley <s@stuartpb.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opws/copld-yaml-tools/issues"
+  },
+  "homepage": "https://github.com/opws/copld-yaml-tools#readme",
+  "dependencies": {
+    "ajv": "^4.11.3",
+    "copld-schema": "^0.1.0",
+    "copldots": "^0.1.1",
+    "js-yaml": "^3.8.1"
+  }
+}
