@@ -22,8 +22,8 @@
   "homepage": "https://github.com/opws/copld-yaml-tools#readme",
   "dependencies": {
     "ajv": "^5.3.0",
-    "copld-schema": "^0.2.0",
-    "copldots": "^0.2.0",
+    "copld-schema": "^0.2.1",
+    "copldots": "^0.2.1",
     "js-yaml": "^3.10.0"
   }
 }
