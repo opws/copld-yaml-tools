@@ -1,6 +1,6 @@
 {
   "name": "copld-yaml-tools",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Simple scripts for dealing with .copld.yaml files",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
